@@ -17,16 +17,14 @@ https://gist.github.com/dankozlowski/564006869a4d57eb6bffb31d9a84e921
 
 ## Usage
 
-1. Start Puma with SSL (note the paths to your certs will vary based on
-   OS and username: `puma -b
-'ssl://127.0.0.1:3000?key=/home/dan/.ssh/server.key&cert=/home/dan/.ssh/server.crt'`
-  * You should see the SSL listener in the server STDOUT: `Listening on
-    ssl://127.0.0.1:3000?key=/home/dan/.ssh/server.key&cert=/home/dan/.ssh/server.crt`
+1. Start Puma with SSL using the certs generated in the last step of
+   Setup: `puma -b
+'ssl://127.0.0.1:3000?key=<YOUR_HOME_DIR>/.ssh/server.key&cert=<YOUR_HOME_DIR>/.ssh/server.crt'`.  You should see the SSL listener in the server STDOUT: `Listening on
+    ssl://127.0.0.1:3000?key=<YOUR_HOME_DIR>/.ssh/server.key&cert=<YOUR_HOME_DIR>/.ssh/server.crt`
 
 1. In a web browser window, access
    `https://localhost:3000/auth/outreach/`.  If correctly configured,
-you should be prompted to authorize your application,
-  * If this step fails, check your app_id and secret in the initializer.
+you should be prompted to authorize your application.  If this step fails, check your `APP_ID` and `APP_SECRET` in the initializer.
 1. Authorize your application by clicking 'Authorize'.  You will be
    redirected to a blank page at
 `https://localhost:3000/auth/outreach/callback?code=<code>&state=<state>`.
@@ -39,7 +37,7 @@ Omniauth" permissions=#<Hashie::Array []> requests=#<OmniAuth::AuthHash
 current=0 maximum=0> versions=#<OmniAuth::AuthHash last="1.0"
 self="1.0">> org=#<OmniAuth::AuthHash>
 request="a11a4aa6-a65d-46ec-adf1-7b72ecec2392" user=#<OmniAuth::AuthHash
-email="dan.kozlowski@outreach.io">>>>
+email="<YOUR_OUTREACH_EMAIL>">>>>
 ```
 
 at the bottom.  If so, your app was successfully authorized!
