@@ -17,6 +17,8 @@ https://gist.github.com/dankozlowski/564006869a4d57eb6bffb31d9a84e921
 
 ## Usage
 
+1. For the duration of this test, add your Outreach application's
+   redirect_url to your `/etc/hosts` file redirecting to `127.0.0.1:3000`.
 1. Start Puma with SSL using the certs generated in the last step of
    Setup: `puma -b
 'ssl://127.0.0.1:3000?key=<YOUR_HOME_DIR>/.ssh/server.key&cert=<YOUR_HOME_DIR>/.ssh/server.crt'`.  You should see the SSL listener in the server STDOUT: `Listening on
